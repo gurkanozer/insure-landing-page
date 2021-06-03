@@ -1,0 +1,19 @@
+.btn {
+    border: none;
+    outline: none;
+    padding: 0.7rem 1.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+}
+
+.btn-primary {
+    border: 1px solid $color-light-gray;
+    background: transparent;
+    color: $color-light-gray;
+
+    &:hover {
+        color: $color-dark-violet;
+        background-color: $color-light-gray;
+    }
+}

@@ -1,0 +1,113 @@
+footer {
+    margin-top: 10rem;
+    width: 100%;
+    background: url("../images/bg-pattern-footer-desktop.svg") no-repeat top left /40%, $color-light-gray;
+
+}
+
+.footer__brand {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        max-width: 1200px;
+        width: calc(100% - 6rem);
+        margin-left: 3rem;
+        height: 1px;
+        background-color: $color-grayish-violet;
+    }
+
+    @media screen and (min-width:$smScreen) {
+        flex-direction: row;
+        justify-content: space-between;
+
+        .socials {
+            margin-top: 0;
+        }
+    }
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+
+    &__item {
+        margin-left: 1rem;
+
+        &:first-child {
+            margin-left: 0;
+
+        }
+
+        color: $color-grayish-violet;
+        font-size: 1.6rem;
+    }
+
+    &__link {
+        color: $color-grayish-violet;
+
+        &:hover {
+            color: $color-dark-violet;
+        }
+    }
+}
+
+.footer__links {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    padding: 1.5rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @media screen and (min-width:$smScreen) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width:$mdScreen) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.footer__nav--item {
+    text-transform: uppercase;
+    margin: 0.8rem 0;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: center;
+
+    &:first-child {
+        margin: 2rem 0;
+
+    }
+
+    span {
+        color: $color-grayish-violet;
+    }
+
+    @media screen and (min-width:$mdScreen) {
+        text-align: left;
+    }
+}
+
+.footer__nav--link {
+    color: $color-dark-violet;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

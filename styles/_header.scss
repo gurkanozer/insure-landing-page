@@ -1,0 +1,139 @@
+header {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem;
+}
+
+.navbar-brand {
+    &>img {
+        width: auto;
+        height: 1.1rem;
+    }
+}
+
+.navbar-btn {
+    border: none;
+    outline: none;
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    background: url("../images/icon-hamburger.svg") center center no-repeat;
+
+}
+
+.nav {
+    display: none;
+}
+
+@media screen and (min-width:$mdScreen) {
+    header {
+        padding: 2rem 3rem 1.6rem;
+    }
+
+    .navbar-btn {
+        display: none;
+    }
+
+    .nav {
+        display: flex;
+
+        &__item {
+            text-transform: uppercase;
+            color: $color-grayish-blue;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin-right: 2rem;
+
+            &:last-child {
+                margin-right: 0rem;
+            }
+
+            &--link {
+                color: inherit;
+
+                &:hover {
+                    color: $color-dark-violet;
+                }
+            }
+
+            &--btn {
+                padding: 0.6rem 1.5rem;
+                border: 1px solid $color-dark-violet;
+                color: $color-dark-violet;
+
+                &:hover {
+                    background: $color-dark-violet;
+                    color: $color-light-gray;
+                }
+            }
+        }
+    }
+
+}
+
+/*****************/
+/***MOBILE MENU***/
+/*****************/
+
+@media screen and (max-width:767px) {
+
+    header.active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        background-color: #fff;
+    }
+
+    header.active .navbar-btn {
+        background: url("../images/icon-close.svg") center center no-repeat;
+    }
+
+    header.active .nav {
+        width: 100%;
+        height: calc(100vh - 5rem);
+        position: fixed;
+        top: 5rem;
+        left: 0;
+        display: block;
+        text-align: center;
+        padding: 1rem;
+        padding-top: 2rem;
+        overflow: auto;
+        background: $color-dark-violet;
+
+        @media screen and(max-width:375px) {
+            background: url("../images/bg-pattern-mobile-nav.svg") no-repeat right bottom/contain, $color-dark-violet;
+
+        }
+
+        &__item {
+            text-transform: uppercase;
+            font-size: 1.4rem;
+            padding: 0.8rem;
+
+            &--link,
+            &--btn {
+                display: block;
+                line-height: 1.8;
+                color: $color-light-gray;
+            }
+
+            &--btn {
+                border: 1px solid $color-light-gray;
+
+                &:hover {
+                    background-color: $color-light-gray;
+                    color: $color-dark-violet;
+                }
+            }
+
+        }
+    }
+
+    /*MEDIA QUERY END */
+}
